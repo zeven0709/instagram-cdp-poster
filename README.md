@@ -89,14 +89,18 @@ instagram-cdp-poster/
 
 ## Konfigurasi
 
-Edit variabel di bagian atas `cdp_poster.js`:
+### Environment Variable (recommended)
 
 | Variable | Default | Fungsi |
 |----------|---------|--------|
-| `PORT` | `9222` | Port CDP Chrome |
-| `USERNAME` | `nugasingenz` | Username IG untuk deteksi duplikat |
-| `IG_BASE` | `https://www.instagram.com` | Base URL IG |
-| `DEFAULT_POST` | `https://www.instagram.com/unpri_medan/p/DR3J4eLk6Wo/` | Post default |
+| `IG_USERNAME` | `your_ig_username` | Username IG untuk deteksi duplikat |
+| `IG_DEFAULT_POST` | `https://www.instagram.com/example/p/xxx/` | Post default (fallback) |
+
+Atau via CLI args:
+
+```bash
+node cdp_poster.js <post_url> --comment "teks" --username "ig_user"
+```
 
 ## Akun Target
 

@@ -15,11 +15,11 @@ const CDP = require('chrome-remote-interface');
 
 // ─── Config ─────────────────────────────────────────────
 const PORT = 9222;
-const USERNAME = 'nugasingenz';
+let USERNAME = process.env.IG_USERNAME || 'your_ig_username';
 const IG_BASE = 'https://www.instagram.com';
-const DEFAULT_POST = 'https://www.instagram.com/unpri_medan/p/DR3J4eLk6Wo/';
+let DEFAULT_POST = process.env.IG_DEFAULT_POST || 'https://www.instagram.com/example/p/xxx/';
 
-// Parse args: node cdp_poster.js <post_url> [--comment "text"]
+// Parse args: node cdp_poster.js <post_url> [--comment "text"] [--username "user"]
 const args = process.argv.slice(2);
 let TARGET_POST = DEFAULT_POST;
 let CUSTOM_COMMENT = null;
@@ -27,6 +27,8 @@ let CUSTOM_COMMENT = null;
 for (let i = 0; i < args.length; i++) {
   if (args[i] === '--comment') {
     CUSTOM_COMMENT = args[++i] || null;
+  } else if (args[i] === '--username') {
+    USERNAME = args[++i] || USERNAME;
   } else if (args[i].startsWith('http')) {
     TARGET_POST = args[i];
   }
