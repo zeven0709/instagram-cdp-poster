@@ -102,17 +102,6 @@ Atau via CLI args:
 node cdp_poster.js <post_url> --comment "teks" --username "ig_user"
 ```
 
-## Akun Target
-
-Dari konfigurasi marketing:
-
-| Akun | Prioritas |
-|------|-----------|
-| `unimedofficial` | HIGH |
-| `unpri_medan` | HIGH |
-| `official.usu` | HIGH |
-| `ceritaumsu` | HIGH |
-| `umsumedan` | HIGH |
 
 ## Tips
 
